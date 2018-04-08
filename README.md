@@ -104,3 +104,17 @@ Query para obtener cursos, sus profesores y comentarios relacionados.
   }
 }
 ~~~
+
+Query para obtener los profesores y los cursos relacionados.
+
+~~~
+{
+  profesores{
+    id
+    nombre
+    cursos{
+      titulo
+    }
+  }
+}
+~~~
