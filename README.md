@@ -16,3 +16,17 @@
 2. Desde el directorio raiz del proyecto ejecuta el comando ***yarn run db:migrate*** para generar la estructura en esa base de datos.
 
 3. Luego ejecuta el commando ***yarn run db:seed*** para generar datos en la base de datos.
+
+
+### Generar una conexión a la BD ###
+
+> **setup.js** inicia una conexión a la BD con `knexConfig` que es el archivo de la configuración donde se indica el motor de la BD.
+
+~~~
+const { model } = require('objection')
+const knexConfig = require('./knexfile')
+const Knex = require('knex')
+
+const knex = Knex(knexConfig.development)
+Model.knex(knex)
+~~~
