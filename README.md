@@ -38,10 +38,24 @@ Model.knex(knex)
 > Ahora cada *request* de nuestro servidor **node** va a tener acceso a la BD.
 
 
-### Obetener información de la BD ###
+### Obtener información de la BD ###
 
 Importar el modelo **Curso**. <br>
 `const Curso = require('./models/Curso')`
 
 Importar el modelo **Profesor**. <br>
 `const Curso = require('./models/Profesor')`
+
+Query para obtener todos Cursos y Profesores.
+
+~~~
+{
+  cursos{
+    id
+    titulo
+  }
+  profesores{
+    nombre
+  }
+}
+~~~
