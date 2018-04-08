@@ -59,3 +59,32 @@ Query para obtener todos Cursos y Profesores.
   }
 }
 ~~~
+
+Query para obtener Cursos y Profesores por **ID**.
+
+~~~
+{
+  curso(id: 1){
+    id
+    titulo
+  }
+  profesor(id: 1){
+    id
+    nombre
+    nacionalidad
+  }
+}
+~~~
+
+Query para obtener cursos y sus profesores relacionados.
+
+~~~
+{
+  cursos{
+    titulo
+    profesor{
+      nombre
+    }
+  }
+}
+~~~

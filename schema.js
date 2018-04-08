@@ -44,7 +44,11 @@ const typeDefs = `
 
 const resolvers = {
   Query: {    
-    cursos: () => Curso.query(), // Traer todos los recursos del modelo Curso.
+    //cursos: () => Curso.query(), // Traer todos los recursos del modelo Curso.
+    /**
+     * Me permite traer los profesores relacionados con el Curso.
+     */
+    cursos: () => Curso.query().eager('profesor'),
     profesores: () => Profesor.query(), // Traer todos los recursos del modelo Profesor.
     // args: Va a tener un objeto cuya key a ser el nombre del parametro que recibe en el schema.
     curso: (rootValue, args) => Curso.query().findById(args.id), // Obtener cursos por ID.
@@ -56,26 +60,6 @@ const resolvers = {
 const schema = makeExecutableSchema({
   typeDefs,
   resolvers
-})
-
-addMockFunctionsToSchema({
-  schema,
-  mocks: {
-    Curso: () => {
-      return {
-        id: casual.uuid,
-        titulo: casual.sentence,
-        descripcion: casual.sentences(2)
-      }
-    },
-    Profesor: () => {
-      return {
-        nombre: casual.name,
-        nacionalidad: casual.country
-      }
-    }
-  },
-  preserveResolvers: true
 })
 
 module.exports = schema
