@@ -30,3 +30,9 @@ const Knex = require('knex')
 const knex = Knex(knexConfig.development)
 Model.knex(knex)
 ~~~
+
+> Requerimos el **setup** en el `index.js` de la siguiente manera:
+
+`require('./db/setup.js')`
+
+> Ahora cada *request* de nuestro servidor **node** va a tener acceso a la BD.
