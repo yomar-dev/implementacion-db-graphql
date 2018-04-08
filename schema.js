@@ -56,9 +56,17 @@ const resolvers = {
     //profesores: () => Profesor.query(), // Traer todos los recursos del modelo Profesor.
     profesores: () => Profesor.query().eager('cursos'), // Traer todos los profesores y sus cursos relacionados.
     // args: Va a tener un objeto cuya key a ser el nombre del parametro que recibe en el schema.
-    curso: (rootValue, args) => Curso.query().findById(args.id), // Obtener cursos por ID.
+    //curso: (rootValue, args) => Curso.query().findById(args.id), // Obtener cursos por ID.
+    /**
+     * Obtener cursos por ID y traer los profesores y comentarios relacionados.
+     */
+    curso: (rootValue, args) => Curso.query().eager('[profesor, comentarios]').findById(args.id),
     // args: Va a tener un objeto cuya key a ser el nombre del parametro que recibe en el schema.
-    profesor: (rootValue, args) => Profesor.query().findById(args.id) // Obtener profesores por ID.
+    //profesor: (rootValue, args) => Profesor.query().findById(args.id), // Obtener profesores por ID.
+    /**
+     * Obtener profesores por ID y traer cursos relacionados.
+     */
+    profesor: (rootValue, args) => Profesor.query().eager('cursos').findById(args.id) // Obtener profesores por ID.
   },
 }
 

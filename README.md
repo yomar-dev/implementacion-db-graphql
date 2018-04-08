@@ -118,3 +118,17 @@ Query para obtener los profesores y los cursos relacionados.
   }
 }
 ~~~
+
+Query para obtener cursos y profesores por **ID** con sus respectivas relaciones.
+
+~~~
+{
+  profesores{
+    id
+    nombre
+    cursos{
+      titulo
+    }
+  }
+}
+~~~
