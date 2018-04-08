@@ -88,3 +88,19 @@ Query para obtener cursos y sus profesores relacionados.
   }
 }
 ~~~
+
+Query para obtener cursos, sus profesores y comentarios relacionados.
+
+~~~
+{
+  cursos{
+    titulo
+    profesor{
+      nombre
+    }
+    comentarios{
+      cuerpo
+    }
+  }
+}
+~~~
