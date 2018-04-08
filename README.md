@@ -42,3 +42,6 @@ Model.knex(knex)
 
 Importar el modelo **Curso**. <br>
 `const Curso = require('./models/Curso')`
+
+Importar el modelo **Profesor**. <br>
+`const Curso = require('./models/Profesor')`

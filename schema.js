@@ -1,6 +1,7 @@
 const { makeExecutableSchema, addMockFunctionsToSchema } = require('graphql-tools')
 const casual = require('casual')
 const Curso = require('./models/Curso') //Importar el modelo Curso.
+const Profesor = require('./models/Profesor') //Importar el modelo Profesor.
 
 const typeDefs = `
   # Esto es un curso en el sistema
@@ -42,26 +43,10 @@ const typeDefs = `
 `
 
 const resolvers = {
-  Query: {
-    cursos: () => {
-      return [{
-        id: 1,
-        titulo: 'Curso de GraphQL',
-        descripcion: 'Aprendiendo GraphQL'
-      }, {
-        id: 2,
-        titulo: 'Curso de PHP',
-        descripcion: 'Aprendiendo PHP'
-      }]
-    }
+  Query: {    
+    cursos: () => Curso.query(), // Traer todos los recursos del modelo Curso.
+    profesores: () => Profesor.query() // Traer todos los recursos del modelo Profesor.
   },
-  Curso: {
-    profesor: () => {
-      return {
-        nombre: 'Pablo'
-      }
-    }
-  }
 }
 
 const schema = makeExecutableSchema({
