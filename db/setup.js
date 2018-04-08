@@ -1,4 +1,4 @@
-const { model } = require('objection')
+const { Model } = require('objection')
 const knexConfig = require('./knexfile')
 const Knex = require('knex')
 
