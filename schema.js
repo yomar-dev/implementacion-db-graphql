@@ -1,5 +1,6 @@
 const { makeExecutableSchema, addMockFunctionsToSchema } = require('graphql-tools')
 const casual = require('casual')
+const Curso = require('./models/Curso') //Importar el modelo Curso.
 
 const typeDefs = `
   # Esto es un curso en el sistema

@@ -36,3 +36,9 @@ Model.knex(knex)
 `require('./db/setup.js')`
 
 > Ahora cada *request* de nuestro servidor **node** va a tener acceso a la BD.
+
+
+### Obetener información de la BD ###
+
+Importar el modelo **Curso**. <br>
+`const Curso = require('./models/Curso')`
