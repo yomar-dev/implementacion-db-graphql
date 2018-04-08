@@ -45,7 +45,11 @@ const typeDefs = `
 const resolvers = {
   Query: {    
     cursos: () => Curso.query(), // Traer todos los recursos del modelo Curso.
-    profesores: () => Profesor.query() // Traer todos los recursos del modelo Profesor.
+    profesores: () => Profesor.query(), // Traer todos los recursos del modelo Profesor.
+    // args: Va a tener un objeto cuya key a ser el nombre del parametro que recibe en el schema.
+    curso: (rootValue, args) => Curso.query().findById(args.id), // Obtener cursos por ID.
+    // args: Va a tener un objeto cuya key a ser el nombre del parametro que recibe en el schema.
+    profesor: (rootValue, args) => Profesor.query().findById(args.id) // Obtener profesores por ID.
   },
 }
 
