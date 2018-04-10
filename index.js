@@ -2,6 +2,11 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const { graphqlExpress, graphiqlExpress } = require('graphql-server-express')
 const schema = require('./schema')
+/**
+ * Esto es lo mismo de arriba ya que al llamar a la carpeta 'schema' por defecto
+ * va a buscar un archivo llamado 'index.js'
+ * const schema = require('./schema/index.js') 
+ */
 
 require('./db/setup.js')
 
