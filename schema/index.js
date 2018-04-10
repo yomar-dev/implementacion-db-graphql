@@ -1,5 +1,5 @@
 const { makeExecutableSchema, addMockFunctionsToSchema } = require('graphql-tools')
-const resolvers = require('./resolvers')
+const resolvers = require('../resolvers')
 
 const typeDefs = `
   # Esto es un curso en el sistema
