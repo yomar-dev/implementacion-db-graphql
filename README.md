@@ -132,3 +132,8 @@ Query para obtener cursos y profesores por **ID** con sus respectivas relaciones
   }
 }
 ~~~
+
+
+### Modularización del Esquema ###
+
+Consiste en separar las responsabilidades de la aplicación para un fácil mantenimiento y una mejor organización. En este caso vamos a separar los **resolvers** y las **entidades** en módulos. 
