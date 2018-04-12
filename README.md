@@ -154,3 +154,19 @@ type Mutation{
 ~~~ 
 
 En este caso estamos indicando cuales son los campos requeridos para agregar un nuevo `Profesor` y como podemos ver también estamos devolviendo un tipo `Profesor`.
+
+**Agregar un nuevo Profesor a la BD:**
+
+De esta manera podemos agregar un nuevo registro a la **BD** y luego podemos pedir que datos queremos obtener luego de realizar el registro, en este caso solo le estamos indicando que nos devuelva el **id**.
+
+~~~
+mutation AgregarProfesor {
+  profesorAdd(profesor: {
+    nombre: "Andrea"
+    genero: FEMENINO
+    nacionalidad: "Argentina"
+  }) {
+    id
+  }
+}
+~~~
