@@ -136,4 +136,21 @@ Query para obtener cursos y profesores por **ID** con sus respectivas relaciones
 
 ### Modularización del Esquema ###
 
-Consiste en separar las responsabilidades de la aplicación para un fácil mantenimiento y una mejor organización. En este caso vamos a separar los **resolvers** y las **entidades** en módulos. 
+Consiste en separar las responsabilidades de la aplicación para un fácil mantenimiento y una mejor organización. En este caso vamos a separar los **resolvers** y las **entidades** en módulos.
+
+
+### Mutation ###
+
+Nos permite realizar acciones sobre la **BD** tales como *agregar*, *actualizar* y *eliminar*. Para crear una **Mutation** utilizamos la siguiente estructura.
+
+> Todas las mutaciones devuelven el tipo que acaban de modificar.
+
+Ejemplo:
+
+~~~
+type Mutation{
+	profesorAdd(nombre: String!, genero: Genero, nacionalidad: String!): Profesor
+}
+~~~ 
+
+En este caso estamos indicando cuales son los campos requeridos para agregar un nuevo `Profesor` y como podemos ver también estamos devolviendo un tipo `Profesor`.
