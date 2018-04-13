@@ -19,6 +19,9 @@ const resolvers = {
        * Insertamos el nuevo profesor en la BD y luego lo retornamos. 
        */
       return Profesor.query().insert(args.profesor)
+    },
+    profesorEdit: (_, args) => {
+      return Profesor.query().patchAndFetchById(args.profesorId, args.profesor)
     }
   }
 }
