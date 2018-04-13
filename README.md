@@ -188,3 +188,10 @@ mutation EditarProfesor{
   }
 }
 ~~~
+
+
+<br><br>
+
+### Enlaces de interes ###
+
+[Documentación de Objection](http://vincit.github.io/objection.js/#introduction) <br>
