@@ -170,3 +170,21 @@ mutation AgregarProfesor {
   }
 }
 ~~~
+
+**Editar un Profesor:**
+
+En el seguiente ejemplo vamos a editar un **profesor**, pero para saber que **profesor** queremos **editar**, tenemos que pasar el **id** de dicho **profesor** y al final le decimos que información queremos obtener luego de la edición, en este caso queremos que nos muestre el `id` y el `nombre`.
+
+~~~
+mutation EditarProfesor{
+  profesorEdit(
+    profesorId: 1,
+    profesor: {
+      nombre: "Sandra"
+    }
+  ){
+    id
+    nombre
+  }
+}
+~~~
